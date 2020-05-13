@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "idojaras", "idojaras.csproj", "{6605C3BA-7023-4BB2-BB8D-F25C3E65C0C6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Idojaras_Setup", "..\Idojaras_Setup\Idojaras_Setup.vdproj", "{D7C88229-D6C6-4A0C-8C3B-923F7823E1EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6605C3BA-7023-4BB2-BB8D-F25C3E65C0C6}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{6605C3BA-7023-4BB2-BB8D-F25C3E65C0C6}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{6605C3BA-7023-4BB2-BB8D-F25C3E65C0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6605C3BA-7023-4BB2-BB8D-F25C3E65C0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C88229-D6C6-4A0C-8C3B-923F7823E1EA}.Debug|Any CPU.ActiveCfg = Debug
+		{D7C88229-D6C6-4A0C-8C3B-923F7823E1EA}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4672354-E7C6-4D02-AE2B-3E74794FAE0E}
+	EndGlobalSection
+EndGlobal
