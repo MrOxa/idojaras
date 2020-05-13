@@ -90,7 +90,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="borult.png" />
+    <Content Include="derult.png" />
+    <Content Include="error.png" />
+    <Content Include="eso.png" />
+    <Content Include="havas.png" />
+    <Content Include="kod.png" />
+    <Content Include="kozepesen_felhos.png" />
+    <Content Include="kozepes_homerseklet.png" />
+    <Content Include="minuszfok.png" />
     <Content Include="napos.ico.ico" />
+    <Content Include="nullafok.png" />
+    <Content Include="pluszfok.png" />
+    <Content Include="szeles_nap.png" />
+    <Content Include="zapor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
