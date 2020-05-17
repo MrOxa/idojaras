@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using HtmlAgilityPack;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Reflection;
 
 namespace idojaras
 {
@@ -262,7 +263,7 @@ namespace idojaras
             return sdata;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             panel1.Controls.Clear(); //Panel1-ről mindent töröl
             for (int i = 0; i < varosok_link.Count; i++)
@@ -390,7 +391,7 @@ namespace idojaras
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
@@ -472,7 +473,8 @@ namespace idojaras
 
         static void DrawToTab1(List<Datastruct> temp)
         {
-            string baseDirectory = System.Windows.Forms.SystemInformation.ComputerName;
+            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            
             //string asd = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             byte eltolas = 0;
             for (int j = 0; j < 30; j++)
@@ -524,6 +526,8 @@ namespace idojaras
                 date_lbl.Size = new Size(37, 30);
                 date_lbl.Location = new Point(j * 50 + 14 + eltolas, 30); // plusz 16 miatt van középen a szöveg a képhez képest
                 panel1.Controls.Add(date_lbl);
+
+                string filepath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 //dátum vége
                 try
                 {
@@ -532,42 +536,42 @@ namespace idojaras
                 pcb.Size = new Size(32, 32);
                 if (temp[j].weathertype.Contains("Erősen felhős") || temp[j].weathertype.Contains("Borult"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\borult.png");
+                    Bitmap bit = new Bitmap(filepath+@"\borult.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Közepesen felhős") || temp[j].weathertype.Contains("Gyengén felhős"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\kozepesen_felhos.png");
+                    Bitmap bit = new Bitmap(filepath+@"\kozepesen_felhos.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Szeles nap") || temp[j].weathertype.Contains("Viharos szél") || temp[j].weathertype.Contains("Hidegfront erős széllel"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\szeles_nap.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\szeles_nap.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Zápor") || temp[j].weathertype.Contains("Gyenge eső") || temp[j].weathertype.Contains("Zivatar") || temp[j].weathertype.Contains("zivatarok"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\zapor.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\zapor.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Eső"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\eso.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\eso.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Derült") || temp[j].weathertype.Contains("Melegfront"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\derult.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\derult.png");
                     pcb.Image = bit;
                 }
                 else if (temp[j].weathertype.Contains("Havas eső") || temp[j].weathertype.Contains("Hózápor"))
                 {
-                    Bitmap bit = new Bitmap(@"kepek\havas.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\havas.png");
                     pcb.Image = bit;
                 }
                 else
                 {
-                    Bitmap bit = new Bitmap(@"kepek\error.png");
+                    Bitmap bit = new Bitmap(@filepath+@"\error.png");
                     pcb.Image = bit;
                 }
                 ToolTip tt = new ToolTip();
@@ -581,7 +585,7 @@ namespace idojaras
                 catch (System.ArgumentException e)
                 {
 
-                    MessageBox.Show(e.Data.ToString()+temp[j].weathertype);
+                    MessageBox.Show(e.ToString()+temp[j].weathertype);
                 }
 
                 //max hőfok
